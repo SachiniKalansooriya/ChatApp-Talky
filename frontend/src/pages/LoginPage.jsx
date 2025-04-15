@@ -23,7 +23,7 @@ const LoginPage = () => {
       {/* Login Container */}
       <div className="flex flex-col items-center justify-center w-3/5 p-6 shadow-lg bg-blue-50 sm:p-12 rounded-xl">
         <div className="w-full max-w-md space-y-8">
-          {/* Logo */}
+        
           <div className="mb-8 text-center">
             <div className="flex flex-col items-center gap-2 group">
               
