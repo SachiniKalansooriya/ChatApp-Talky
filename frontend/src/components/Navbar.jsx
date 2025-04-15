@@ -32,7 +32,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-center rounded-lg size-12 bg-primary/10">
                 
                 </div>
-                <h1 className="font-mono text-2xl italic font-bold text-blue-800 ">UniChat</h1>
+                <h1 className="font-mono text-2xl italic font-bold text-blue-800 ">Talky</h1>
               </Link>
             </div>
 
