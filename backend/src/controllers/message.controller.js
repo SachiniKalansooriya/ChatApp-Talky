@@ -43,7 +43,6 @@ export const sendMessage = async (req, res) => {
 
     let imageUrl;
     if (image) {
-      // Upload base64 image to cloudinary
       const uploadResponse = await cloudinary.uploader.upload(image);
       imageUrl = uploadResponse.secure_url;
     }
@@ -57,6 +56,26 @@ export const sendMessage = async (req, res) => {
 
     await newMessage.save();
 
+    // ✅ Update recentChats for both sender and receiver
+    const updateRecentChats = async (userId, chatPartnerId) => {
+      await User.findByIdAndUpdate(userId, {
+        $pull: { recentChats: { userId: chatPartnerId } }, // remove if already exists
+      });
+
+      await User.findByIdAndUpdate(userId, {
+        $push: {
+          recentChats: {
+            userId: chatPartnerId,
+            lastMessageAt: new Date(),
+          },
+        },
+      });
+    };
+
+    await updateRecentChats(senderId, receiverId);
+    await updateRecentChats(receiverId, senderId);
+
+    // Emit message via socket if receiver is online
     const receiverSocketId = getReceiverSocketId(receiverId);
     if (receiverSocketId) {
       io.to(receiverSocketId).emit("newMessage", newMessage);
@@ -67,4 +86,4 @@ export const sendMessage = async (req, res) => {
     console.log("Error in sendMessage controller: ", error.message);
     res.status(500).json({ error: "Internal server error" });
   }
-}; 
+};

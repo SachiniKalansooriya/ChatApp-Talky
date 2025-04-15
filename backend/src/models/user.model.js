@@ -20,6 +20,18 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    recentChats: [
+      {
+        userId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+        lastMessageAt: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
