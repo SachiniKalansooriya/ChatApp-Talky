@@ -56,10 +56,10 @@ export const sendMessage = async (req, res) => {
 
     await newMessage.save();
 
-    // ✅ Update recentChats for both sender and receiver
+    // Update recentChats for both sender and receiver
     const updateRecentChats = async (userId, chatPartnerId) => {
       await User.findByIdAndUpdate(userId, {
-        $pull: { recentChats: { userId: chatPartnerId } }, // remove if already exists
+        $pull: { recentChats: { userId: chatPartnerId } }, 
       });
 
       await User.findByIdAndUpdate(userId, {
