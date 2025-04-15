@@ -25,7 +25,7 @@ const SidebarSkeleton = () => {
               <div className="rounded-full skeleton size-12" />
             </div>
 
-            {/* User info skeleton - only visible on larger screens */}
+            {/* User info */}
             <div className="flex-1 hidden min-w-0 text-left lg:block">
               <div className="w-32 h-4 mb-2 skeleton" />
               <div className="w-16 h-3 skeleton" />
