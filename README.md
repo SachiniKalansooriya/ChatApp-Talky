@@ -13,7 +13,7 @@
 
 ## 📸 Features
 
-- ✅ Real-time messaging  
+✅ Real-time messaging  
 - ✅ Send messages, emojis, and images  
 - ✅ User authentication (Sign up / Login)  
 - ✅ Change themes (dark/light mode)  
