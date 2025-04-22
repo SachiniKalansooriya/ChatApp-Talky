@@ -14,11 +14,11 @@
 ## 📸 Features
 
 ✅ Real-time messaging  
-- ✅ Send messages, emojis, and images  
-- ✅ User authentication (Sign up / Login)  
-- ✅ Change themes (dark/light mode)  
-- ✅ Set and update profile pictures  
-- ✅ See who’s online  
-- ✅ Clean and responsive UI  
+✅ Send messages, emojis, and images  
+✅ User authentication (Sign up / Login)  
+✅ Change themes (dark/light mode)  
+✅ Set and update profile pictures  
+✅ See who’s online  
+✅ Clean and responsive UI  
 
 
